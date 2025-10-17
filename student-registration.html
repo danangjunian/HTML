@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran Siswa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="student-registration.css">
+</head>
+<body>
+    <div class="page-shell">
+        <div class="card">
+            <header class="card-header">
+                <nav class="top-nav">
+                    <a href="#">SMA Pelita Hijau</a>
+                    <a href="#">Hubungi Kami</a>
+                </nav>
+                <div class="multi-step">
+                    <div class="step active" data-step-index="1">
+                        <div class="step-number">1</div>
+                        <span class="step-title">Jenis Pendaftaran</span>
+                    </div>
+                    <div class="step" data-step-index="2">
+                        <div class="step-number">2</div>
+                        <span class="step-title">Data Siswa</span>
+                    </div>
+                    <div class="step" data-step-index="3">
+                        <div class="step-number">3</div>
+                        <span class="step-title">Orang Tua &amp; Riwayat</span>
+                    </div>
+                    <div class="step" data-step-index="4">
+                        <div class="step-number">4</div>
+                        <span class="step-title">Preferensi</span>
+                    </div>
+                </div>
+            </header>
+            <div class="card-body">
+                <h1 id="wizardTitle">Pendaftaran Siswa</h1>
+                <p class="subtitle" id="wizardSubtitle">Pilih jenis pendaftaran yang sesuai untuk memulai proses pendaftaran.</p>
+                <form class="wizard-form">
+                    <div class="step-content active" data-step="1">
+                        <section>
+                            <h2 class="section-title">Pilih Jenis Pendaftaran</h2>
+                            <p class="helper-text">Silakan pilih jenis pendaftaran yang ingin dilakukan sebelum melanjutkan ke langkah berikutnya.</p>
+                        </section>
+                        <div class="option-group">
+                            <button class="option-button" type="button" data-type="baru">
+                                <span class="option-title">Daftar Siswa Baru</span>
+                                <span class="option-desc">Gunakan pilihan ini untuk calon siswa yang belum pernah terdaftar di sekolah sebelumnya.</span>
+                            </button>
+                            <button class="option-button" type="button" data-type="pindahan">
+                                <span class="option-title">Daftar Siswa Pindahan</span>
+                                <span class="option-desc">Pilih opsi ini jika siswa berasal dari sekolah lain dan ingin pindah ke SMA Pelita Hijau.</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="step-content" data-step="2">
+                        <section>
+                            <h2 class="section-title">Identitas Calon Siswa</h2>
+                            <div class="form-grid">
+                                <label>
+                                    Nama Lengkap*
+                                    <input type="text" name="namaLengkap" placeholder="Masukkan nama lengkap" required>
+                                </label>
+                                <label>
+                                    Nama Panggilan*
+                                    <input type="text" name="namaPanggilan" placeholder="Masukkan nama panggilan" required>
+                                </label>
+                                <label>
+                                    Jenis Kelamin*
+                                    <select name="jenisKelamin" required>
+                                        <option value="">Pilih jenis kelamin</option>
+                                        <option value="laki">Laki-laki</option>
+                                        <option value="perempuan">Perempuan</option>
+                                    </select>
+                                </label>
+                                <label>
+                                    Berkebutuhan Khusus*
+                                    <select name="berkebutuhanKhusus" required>
+                                        <option value="">Pilih status kebutuhan khusus</option>
+                                        <option value="tidak">Tidak</option>
+                                        <option value="netra">Netra</option>
+                                        <option value="rungu">Rungu</option>
+                                        <option value="grahita-ringan">Grahita Ringan</option>
+                                        <option value="grahita-sedang">Grahita Sedang</option>
+                                        <option value="daksa-ringan">Daksa Ringan</option>
+                                        <option value="daksa-sedang">Daksa Sedang</option>
+                                        <option value="wicara">Wicara</option>
+                                        <option value="hyperaktif">Hyperaktif</option>
+                                        <option value="cerdas-istimewa">Cerdas Istimewa</option>
+                                        <option value="bakat-istimewa">Bakat Istimewa</option>
+                                        <option value="kesulitan-belajar">Kesulitan Belajar</option>
+                                        <option value="narkoba">Narkoba</option>
+                                        <option value="down-syndrome">Down Syndrome</option>
+                                        <option value="autis">Autis</option>
+                                    </select>
+                                </label>
+                                <label>
+                                    Tanggal Lahir*
+                                    <input type="date" name="tanggalLahir" required>
+                                </label>
+                                <label>
+                                    Agama*
+                                    <select name="agama" required>
+                                        <option value="">Pilih agama</option>
+                                        <option value="islam">Islam</option>
+                                        <option value="kristen">Kristen</option>
+                                        <option value="katolik">Katolik</option>
+                                        <option value="hindu">Hindu</option>
+                                        <option value="budha">Budha</option>
+                                        <option value="khonghucu">Khonghucu</option>
+                                        <option value="lainnya">Lainnya</option>
+                                    </select>
+                                </label>
+                                <label>
+                                    Kewarganegaraan*
+                                    <select name="kewarganegaraan" required data-nationality-select>
+                                        <option value="">Pilih kewarganegaraan</option>
+                                        <option value="wni">WNI</option>
+                                        <option value="wna">WNA</option>
+                                    </select>
+                                </label>
+                                <label>
+                                    Nomor WhatsApp / Telepon*
+                                    <input type="tel" name="nomorTelepon" placeholder="Masukkan nomor aktif" required>
+                                </label>
+                                <label>
+                                    Email Aktif*
+                                    <input type="email" name="email" placeholder="Masukkan email aktif" required>
+                                </label>
+                            </div>
+                            <section class="conditional-panel" data-wni-section>
+                                <h3 class="score-heading">Data Tambahan WNI</h3>
+                                <div class="form-grid">
+                                    <label>
+                                        NISN*
+                                        <input type="text" name="wniNisn" placeholder="Nomor Induk Siswa Nasional" data-wni-required>
+                                    </label>
+                                    <label>
+                                        Provinsi*
+                                        <input type="text" name="wniProvinsi" placeholder="Masukkan provinsi" data-wni-required>
+                                    </label>
+                                    <label>
+                                        Kabupaten/Kota*
+                                        <input type="text" name="wniKabupaten" placeholder="Masukkan kabupaten atau kota" data-wni-required>
+                                    </label>
+                                    <label>
+                                        Kecamatan*
+                                        <input type="text" name="wniKecamatan" placeholder="Masukkan kecamatan" data-wni-required>
+                                    </label>
+                                    <label>
+                                        Desa / Kelurahan*
+                                        <input type="text" name="wniDesa" placeholder="Masukkan desa atau kelurahan" data-wni-required>
+                                    </label>
+                                    <label>
+                                        RT*
+                                        <input type="text" name="wniRt" placeholder="Contoh: 04" data-wni-required>
+                                    </label>
+                                    <label>
+                                        RW*
+                                        <input type="text" name="wniRw" placeholder="Contoh: 07" data-wni-required>
+                                    </label>
+                                </div>
+                                <label>
+                                    Alamat Domisili*
+                                    <textarea name="wniAlamatDomisili" placeholder="Tulis alamat tempat tinggal saat ini" data-wni-required></textarea>
+                                </label>
+                            </section>
+                        </section>
+                    </div>
+
+                    <div class="step-content" data-step="3">
+                        <section>
+                            <h2 class="section-title">Data Orang Tua / Wali</h2>
+                            <div class="form-grid">
+                                <label>
+                                    Nama Ayah*
+                                    <input type="text" name="namaAyah" placeholder="Masukkan nama lengkap ayah" required>
+                                </label>
+                                <label>
+                                    Kontak Ayah*
+                                    <input type="tel" name="kontakAyah" placeholder="Nomor telepon ayah" required>
+                                </label>
+                                <label>
+                                    Nama Ibu*
+                                    <input type="text" name="namaIbu" placeholder="Masukkan nama lengkap ibu" required>
+                                </label>
+                                <label>
+                                    Kontak Ibu*
+                                    <input type="tel" name="kontakIbu" placeholder="Nomor telepon ibu" required>
+                                </label>
+                                <label>
+                                    Nama Wali (opsional)
+                                    <input type="text" name="namaWali" placeholder="Masukkan nama wali bila ada">
+                                </label>
+                                <label>
+                                    Kontak Wali
+                                    <input type="tel" name="kontakWali" placeholder="Nomor telepon wali">
+                                </label>
+                                <label>
+                                    Penghasilan Orang Tua / Wali*
+                                    <select name="penghasilan" required>
+                                        <option value="">Pilih rentang penghasilan</option>
+                                        <option value="1">&lt; Rp3.000.000</option>
+                                        <option value="2">Rp3.000.000 - Rp5.000.000</option>
+                                        <option value="3">Rp5.000.000 - Rp10.000.000</option>
+                                        <option value="4">&gt; Rp10.000.000</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </section>
+
+                        <section data-baru-section>
+                            <h2 class="section-title">Riwayat Pendidikan</h2>
+                            <div class="form-grid">
+                                <label>
+                                    Nama Sekolah Sebelumnya*
+                                    <input type="text" name="baruSekolahSebelumnya" placeholder="Masukkan nama sekolah" data-baru-required>
+                                </label>
+                                <label>
+                                    Alamat Sekolah Sebelumnya*
+                                    <input type="text" name="baruAlamatSekolah" placeholder="Alamat sekolah sebelumnya" data-baru-required>
+                                </label>
+                                <label>
+                                    Tahun Lulus / Tamat*
+                                    <input type="text" name="baruTahunLulus" placeholder="Contoh: 2024" data-baru-required>
+                                </label>
+                            </div>
+                            <label>
+                                Pilihan Jenjang Sekolah*
+                                <select name="baruPilihanSekolah" data-jenjang-select data-baru-required>
+                                    <option value="">Pilih jenjang pendidikan</option>
+                                    <option value="smp">SMP</option>
+                                    <option value="sma">SMA</option>
+                                </select>
+                            </label>
+                            <div class="score-wrapper">
+                                <div class="score-panel" data-jenjang-panel="smp">
+                                    <h3 class="score-heading">A. NILAI UJIAN SEKOLAH/MADRASAH (NUS/M)</h3>
+                                    <div class="form-grid">
+                                        <label>
+                                            Bahasa Indonesia*
+                                            <input type="number" name="nilaiSmpIndonesia" min="0" max="100" step="0.01" placeholder="Masukkan nilai" data-jenjang-required="smp">
+                                        </label>
+                                        <label>
+                                            Matematika*
+                                            <input type="number" name="nilaiSmpMatematika" min="0" max="100" step="0.01" placeholder="Masukkan nilai" data-jenjang-required="smp">
+                                        </label>
+                                        <label>
+                                            Ilmu Pengetahuan Alam (IPA)*
+                                            <input type="number" name="nilaiSmpIpa" min="0" max="100" step="0.01" placeholder="Masukkan nilai" data-jenjang-required="smp">
+                                        </label>
+                                    </div>
+                                    <label class="score-subheading">
+                                        <span>B. NILAI BONUS PRESTASI (NBP) (Jika ada)</span>
+                                        <input type="number" name="nilaiSmpBonus" min="0" max="100" step="0.01" placeholder="Masukkan nilai bonus (opsional)">
+                                    </label>
+                                </div>
+                                <div class="score-panel" data-jenjang-panel="sma">
+                                    <h3 class="score-heading">A. NILAI UJIAN (NUN)</h3>
+                                    <div class="form-grid">
+                                        <label>
+                                            Bahasa Indonesia*
+                                            <input type="number" name="nilaiSmaIndonesia" min="0" max="100" step="0.01" placeholder="Masukkan nilai" data-jenjang-required="sma">
+                                        </label>
+                                        <label>
+                                            Matematika*
+                                            <input type="number" name="nilaiSmaMatematika" min="0" max="100" step="0.01" placeholder="Masukkan nilai" data-jenjang-required="sma">
+                                        </label>
+                                        <label>
+                                            Ilmu Pengetahuan Alam (IPA)*
+                                            <input type="number" name="nilaiSmaIpa" min="0" max="100" step="0.01" placeholder="Masukkan nilai" data-jenjang-required="sma">
+                                        </label>
+                                        <label>
+                                            Bahasa Inggris*
+                                            <input type="number" name="nilaiSmaInggris" min="0" max="100" step="0.01" placeholder="Masukkan nilai" data-jenjang-required="sma">
+                                        </label>
+                                    </div>
+                                    <label class="score-subheading">
+                                        <span>B. NILAI BONUS PRESTASI (NBP) (Jika ada)</span>
+                                        <input type="number" name="nilaiSmaBonus" min="0" max="100" step="0.01" placeholder="Masukkan nilai bonus (opsional)">
+                                    </label>
+                                </div>
+                            </div>
+                            <label>
+                                Prestasi Akademik / Non-Akademik
+                                <textarea name="baruPrestasi" placeholder="Tuliskan prestasi akademik atau non-akademik"></textarea>
+                            </label>
+                        </section>
+
+                        <section data-pindahan-section>
+                            <h2 class="section-title">Riwayat Pendidikan</h2>
+                            <div class="form-grid">
+                                <label>
+                                    Nama Sekolah Sebelumnya*
+                                    <input type="text" name="sekolahSebelumnya" placeholder="Masukkan nama sekolah" data-pindahan-required>
+                                </label>
+                                <label>
+                                    Alamat Sekolah Sebelumnya*
+                                    <input type="text" name="alamatSekolahSebelumnya" placeholder="Alamat sekolah sebelumnya" data-pindahan-required>
+                                </label>
+                                <label>
+                                    Tahun Lulus / Tamat*
+                                    <input type="text" name="tahunLulus" placeholder="Contoh: 2024" data-pindahan-required>
+                                </label>
+                                <label>
+                                    Nilai Rata-rata Kelulusan (opsional)
+                                    <input type="text" name="nilaiRataRata" placeholder="Contoh: 87,5">
+                                </label>
+                            </div>
+                            <label>
+                                Prestasi Akademik / Non-Akademik
+                                <textarea name="prestasi" placeholder="Tuliskan prestasi akademik atau non-akademik"></textarea>
+                            </label>
+                        </section>
+
+                        <section data-pindahan-section>
+                            <h2 class="section-title">Data Tambahan Siswa Pindahan</h2>
+                            <div class="form-grid">
+                                <label>
+                                    Nama Sekolah Asal*
+                                    <input type="text" name="sekolahAsal" placeholder="Masukkan nama sekolah asal">
+                                </label>
+                                <label>
+                                    Alamat Sekolah Asal*
+                                    <input type="text" name="alamatSekolahAsal" placeholder="Alamat sekolah asal">
+                                </label>
+                                <label>
+                                    Kelas Terakhir yang Diselesaikan*
+                                    <input type="text" name="kelasTerakhir" placeholder="Contoh: XI IPA 1">
+                                </label>
+                                <label>
+                                    Kontak Sekolah Asal (opsional)
+                                    <input type="text" name="kontakSekolahAsal" placeholder="Nomor telepon atau email">
+                                </label>
+                            </div>
+                            <label>
+                                Alasan Pindah Sekolah*
+                                <textarea name="alasanPindah" placeholder="Jelaskan alasan pindah sekolah"></textarea>
+                            </label>
+                            <label>
+                                Ringkasan Nilai atau Pencapaian Akademik
+                                <textarea name="ringkasanNilai" placeholder="Tuliskan ringkasan nilai atau prestasi dari sekolah asal"></textarea>
+                            </label>
+                            <p class="helper-text">Bagian ini hanya perlu diisi oleh calon siswa pindahan.</p>
+                        </section>
+                    </div>
+
+                    <div class="step-content" data-step="4">
+                        <section>
+                            <h2 class="section-title">Preferensi &amp; Informasi Tambahan</h2>
+                            <div class="form-grid">
+                                <label>
+                                    Pilihan Program / Jurusan*
+                                    <select name="programPilihan" required>
+                                        <option value="">Pilih program / jurusan</option>
+                                        <option value="ipa">Ilmu Pengetahuan Alam</option>
+                                        <option value="ips">Ilmu Pengetahuan Sosial</option>
+                                        <option value="bahasa">Bahasa &amp; Budaya</option>
+                                        <option value="desain">Desain &amp; Kreatif</option>
+                                    </select>
+                                </label>
+                                <label>
+                                    Kebutuhan Asrama*
+                                    <select name="kebutuhanAsrama" required>
+                                        <option value="">Pilih kebutuhan asrama</option>
+                                        <option value="ya">Ya, membutuhkan asrama</option>
+                                        <option value="tidak">Tidak membutuhkan asrama</option>
+                                    </select>
+                                </label>
+                                <label>
+                                    Mengetahui Scholabs dari*
+                                    <select name="sumberInformasi" required>
+                                        <option value="">Pilih sumber informasi</option>
+                                        <option value="media">Media sosial</option>
+                                        <option value="teman">Teman / Saudara</option>
+                                        <option value="guru">Guru / Sekolah Asal</option>
+                                        <option value="acara">Pameran pendidikan</option>
+                                        <option value="lainnya">Lainnya</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <label>
+                                Catatan Tambahan (opsional)
+                                <textarea name="catatanTambahan" placeholder="Masukkan informasi tambahan yang perlu kami ketahui"></textarea>
+                            </label>
+                        </section>
+
+                        <section data-baru-document>
+                            <h2 class="section-title">Dokumen Pendukung</h2>
+                            <div class="document-card">
+                                <div>
+                                    <strong>FC Akte Kelahiran</strong>
+                                    <span>Unggah salinan akte kelahiran dalam format PDF atau JPG.</span>
+                                </div>
+                                <div class="document-action">
+                                    <span class="status-pill pending">Belum Diunggah</span>
+                                    <button class="icon-button" type="button" aria-label="Unggah file">
+                                        Unggah
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="document-card">
+                                <div>
+                                    <strong>FC Kartu Keluarga</strong>
+                                    <span>Unggah salinan kartu keluarga terbaru.</span>
+                                </div>
+                                <div class="document-action">
+                                    <span class="status-pill pending">Belum Diunggah</span>
+                                    <button class="icon-button" type="button" aria-label="Unggah file">
+                                        Unggah
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="document-card">
+                                <div>
+                                    <strong>Pas Foto 3x4</strong>
+                                    <span>Unggah foto terbaru ukuran 3x4 dengan latar polos.</span>
+                                </div>
+                                <div class="document-action">
+                                    <span class="status-pill pending">Belum Diunggah</span>
+                                    <button class="icon-button" type="button" aria-label="Unggah file">
+                                        Unggah
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="document-card">
+                                <div>
+                                    <strong>Scan Rapor Semester Terakhir</strong>
+                                    <span>Unggah scan rapor terbaru dalam format PDF atau JPG.</span>
+                                </div>
+                                <div class="document-action">
+                                    <span class="status-pill pending">Belum Diunggah</span>
+                                    <button class="icon-button" type="button" aria-label="Unggah file">
+                                        Unggah
+                                    </button>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section data-pindahan-document>
+                            <h2 class="section-title">Dokumen Pendukung Siswa Pindahan</h2>
+                            <div class="document-card">
+                                <div>
+                                    <strong>Akte Kelahiran</strong>
+                                    <span>Unggah salinan akte kelahiran dalam format PDF atau JPG.</span>
+                                </div>
+                                <div class="document-action">
+                                    <span class="status-pill pending">Belum Diunggah</span>
+                                    <button class="icon-button" type="button" aria-label="Unggah file">
+                                        Unggah
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="document-card">
+                                <div>
+                                    <strong>Kartu Keluarga</strong>
+                                    <span>Unggah salinan kartu keluarga terbaru.</span>
+                                </div>
+                                <div class="document-action">
+                                    <span class="status-pill pending">Belum Diunggah</span>
+                                    <button class="icon-button" type="button" aria-label="Unggah file">
+                                        Unggah
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="document-card">
+                                <div>
+                                    <strong>Pas Foto 3x4</strong>
+                                    <span>Unggah foto terbaru ukuran 3x4 dengan latar polos.</span>
+                                </div>
+                                <div class="document-action">
+                                    <span class="status-pill pending">Belum Diunggah</span>
+                                    <button class="icon-button" type="button" aria-label="Unggah file">
+                                        Unggah
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="document-card">
+                                <div>
+                                    <strong>Rapor Terakhir dari Sekolah Asal</strong>
+                                    <span>Unggah rapor terakhir dari sekolah asal dalam format PDF atau JPG.</span>
+                                </div>
+                                <div class="document-action">
+                                    <span class="status-pill pending">Belum Diunggah</span>
+                                    <button class="icon-button" type="button" aria-label="Unggah file">
+                                        Unggah
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="document-card">
+                                <div>
+                                    <strong>Surat Rekomendasi / Surat Pindah</strong>
+                                    <span>Unggah surat rekomendasi atau surat pindah dari sekolah asal.</span>
+                                </div>
+                                <div class="document-action">
+                                    <span class="status-pill pending">Belum Diunggah</span>
+                                    <button class="icon-button" type="button" aria-label="Unggah file">
+                                        Unggah
+                                    </button>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section data-wna-document>
+                            <h2 class="section-title">Dokumen Pendukung WNA</h2>
+                            <div class="document-card">
+                                <div>
+                                    <strong>Surat Keterangan Tidak Bekerja</strong>
+                                    <span>Lampirkan surat keterangan tidak bekerja dari pihak berwenang.</span>
+                                </div>
+                                <div class="document-action">
+                                    <span class="status-pill pending">Belum Diunggah</span>
+                                    <button class="icon-button" type="button" aria-label="Unggah file">
+                                        Unggah
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="document-card">
+                                <div>
+                                    <strong>Surat Pernyataan Jaminan Pembiayaan</strong>
+                                    <span>Unggah surat jaminan pembiayaan yang telah bermeterai.</span>
+                                </div>
+                                <div class="document-action">
+                                    <span class="status-pill pending">Belum Diunggah</span>
+                                    <button class="icon-button" type="button" aria-label="Unggah file">
+                                        Unggah
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="document-card">
+                                <div>
+                                    <strong>Paspor Siswa</strong>
+                                    <span>Unggah salinan paspor siswa yang masih berlaku.</span>
+                                </div>
+                                <div class="document-action">
+                                    <span class="status-pill pending">Belum Diunggah</span>
+                                    <button class="icon-button" type="button" aria-label="Unggah file">
+                                        Unggah
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="document-card">
+                                <div>
+                                    <strong>Rapor Terakhir</strong>
+                                    <span>Unggah rapor terakhir dalam format PDF atau JPG.</span>
+                                </div>
+                                <div class="document-action">
+                                    <span class="status-pill pending">Belum Diunggah</span>
+                                    <button class="icon-button" type="button" aria-label="Unggah file">
+                                        Unggah
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="document-card">
+                                <div>
+                                    <strong>Ijazah Terakhir</strong>
+                                    <span>Unggah ijazah terakhir yang telah dilegalisir.</span>
+                                </div>
+                                <div class="document-action">
+                                    <span class="status-pill pending">Belum Diunggah</span>
+                                    <button class="icon-button" type="button" aria-label="Unggah file">
+                                        Unggah
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="document-card">
+                                <div>
+                                    <strong>KTP/Paspor Orang Tua / Penanggung Jawab</strong>
+                                    <span>Unggah identitas orang tua atau penanggung jawab.</span>
+                                </div>
+                                <div class="document-action">
+                                    <span class="status-pill pending">Belum Diunggah</span>
+                                    <button class="icon-button" type="button" aria-label="Unggah file">
+                                        Unggah
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="document-card">
+                                <div>
+                                    <strong>KITAS dan STM dari Kepolisian (Opsional)</strong>
+                                    <span>Jika tersedia, unggah salinan KITAS dan Surat Tanda Melapor.</span>
+                                </div>
+                                <div class="document-action">
+                                    <span class="status-pill pending">Belum Diunggah</span>
+                                    <button class="icon-button" type="button" aria-label="Unggah file">
+                                        Unggah
+                                    </button>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </form>
+            </div>
+            <footer class="card-footer">
+                <button class="secondary-button" id="prevStep" type="button">Langkah Sebelumnya</button>
+                <div class="footer-right">
+                    <a class="link-button" href="#">&larr; Kembali ke Beranda</a>
+                    <button class="primary-button" id="nextStep" type="button">
+                        Langkah Selanjutnya &rarr;
+                    </button>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+        <script src="student-registration.js" defer></script>
+</body>
+</html>
+
+
